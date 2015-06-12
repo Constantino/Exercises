@@ -8,3 +8,9 @@ console.log('substring: '+listStr);
 var x = listStr.split(',');
 
 console.log('substring split commas: ',x);
+
+x.forEach(function(element, index, array){
+	array[index] = element.trim();
+})
+
+console.log('substring without spaces: ',x);
