@@ -1,0 +1,5 @@
+C:\Users\Constantino\Documents\GitHub\Exercises\C#\HelloWorld\HelloWorld\bin\Release\HelloWorld.exe.config
+C:\Users\Constantino\Documents\GitHub\Exercises\C#\HelloWorld\HelloWorld\bin\Release\HelloWorld.exe
+C:\Users\Constantino\Documents\GitHub\Exercises\C#\HelloWorld\HelloWorld\bin\Release\HelloWorld.pdb
+C:\Users\Constantino\Documents\GitHub\Exercises\C#\HelloWorld\HelloWorld\obj\Release\HelloWorld.exe
+C:\Users\Constantino\Documents\GitHub\Exercises\C#\HelloWorld\HelloWorld\obj\Release\HelloWorld.pdb
