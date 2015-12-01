@@ -3,6 +3,7 @@
 
 int funcion_escalon();
 int funcion_sigmoidal();
+double sumatoria(double *entradas, double *pesos, double umbral);
 
 int main(int argc, char *argv[]){
 
@@ -24,5 +25,20 @@ int main(int argc, char *argv[]){
 
 	printf("umbral: %f\n", umbral);
 
+	printf("sumatoria: %f\n", sumatoria(entradas,pesos,umbral));
+
 	return 0;
+}
+
+double sumatoria(double *entradas, double *pesos, double umbral){
+
+	double sum = 0.0;
+	int size = sizeof(entradas)/sizeof(entradas[0]);
+
+	for(int i=0; i<2; i++){
+
+		sum += entradas[i]*pesos[i];
+	}
+
+	return sum-umbral;
 }
