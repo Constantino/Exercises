@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int funcion_activacion(float x, int salidas[],float t);
-double sumatoria(double *entradas, double *pesos, double umbral);
+double sumatoria(double *entradas, double *pesos, double umbral, int size);
 
 int main(int argc, char *argv[]){
 
@@ -25,7 +25,8 @@ int main(int argc, char *argv[]){
 
 	printf("umbral: %f\n", umbral);
 
-	float sum = sumatoria(entradas,pesos,umbral);
+	float sum = sumatoria(entradas,pesos,umbral,sizeof(entradas)/sizeof(double));
+	
 	printf("sumatoria: %f\n", sum);
 
 	int salidas_sigmoidal[2] = {1,-1}; 
@@ -36,23 +37,25 @@ int main(int argc, char *argv[]){
 
 	printf("Salida funcion_sigmoidal: %d\n", salida_funcion_sigmoidal);
 	printf("Salida funcion_escalon: %d\n", salida_funcion_escalon);
+
 	return 0;
 }
 
-double sumatoria(double *entradas, double *pesos, double umbral){
+double sumatoria(double *entradas, double *pesos, double umbral, int size){
 
 	double sum = 0.0;
-	int size = sizeof(entradas)/sizeof(entradas[0]);
-
-	for(int i=0; i<2; i++){
+	
+	for(int i=0; i<size; i++){
 
 		sum += entradas[i]*pesos[i];
+
 	}
 
 	return sum-umbral;
 }
 
 int funcion_activacion(float x, int *salidas,float t){
+	
 	if(x >= t) return salidas[0];
 	return salidas[1];
 
