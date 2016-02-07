@@ -1,4 +1,2 @@
 # Exercises
-My training on a variety of programming languages:
-Python
-JavaScript
+My training on a variety of programming languages
