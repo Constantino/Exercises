@@ -1,4 +1,4 @@
-Pseudo-code 2
+Pseudo-code
 
 Location = new Object()
 Location.Opening
@@ -39,7 +39,7 @@ function Shift( j , i):
 
 	return (Shift <= Sum_Wait_MaxShift) ? Shift : Sum_Wait_MaxShift
 
-function Ratio(i):
+function Ratio(Locations,i):
 	return pow(Locations[i].Score,2) / Locations[i].Shift
 
 function UpdateLocationProperties(Locations):
@@ -59,4 +59,5 @@ function InsertionStep( ):
 	IncludedLocations.Add( Location_Higher_Ratio )
 	Locations.Remove( Location_Higher_Ratio )
 
+	UpdateLocationProperties( IncludedLocations )
 
