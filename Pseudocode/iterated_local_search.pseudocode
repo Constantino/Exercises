@@ -1,0 +1,44 @@
+Pseudo-code 2
+
+Location = new Object()
+Location.opening
+Location.closing
+Location.Stars
+Location.Wait
+Location.MaxShift
+
+Locations = new List<Location>
+IncludedLocations = new List<Location>
+
+IncludedLocations.Add(StartPoint)
+IncludedLocations.Add(EndPoint)
+
+function Wait(opening,arrival):
+	return max(0, opening-arrival)
+
+function EstimateArrivalFrom(Location1, Location2):
+	... Geolocation and Google API stuff
+	return EstimatedTime
+
+function MaxShift(Locations, i, opening, closing, arrival):
+	return min( closing-arrival , Wait(opening, arrival) + 
+		MaxShift(Locations, i+1, Locations[i+1].opening, Locations[i+1].closing, EstimateArrivalFrom(Locations[i], Locations[i+1]) )
+
+function Shift( j , i):
+	cij = EstimateArrivalFrom( IncludedLocations[i], InLocations[j] )
+	wait = Locations[j].Wait
+	Tj = ?????
+	cjk = EstimateArrivalFrom( Locations[j], IncludedLocations[i+1] )
+	cik = EstimateArrivalFrom( IncludedLocations[i],  IncludedLocations[i+1])
+
+	Shift = cij + wait + Tj + cjk - cik
+	Sum_Wait_MaxShift = IncludedLocations[i+1].Wait + IncludedLocations[i+1].MaxShift
+
+	return Shift <= Sum_Wait_MaxShift ? Shift : Sum_Wait_MaxShift
+
+
+for i in range(Locations):
+	arrival = EstimateArrivalFrom(Locations[i],Locations[i+1])
+	Locations[i].Wait = Wait(Locations[i].Opening, arrival)
+	Locations[i].MaxShift = MaxShift(Locations, i, Locations[i].opening, Locations[i].closing, arrival )
+
