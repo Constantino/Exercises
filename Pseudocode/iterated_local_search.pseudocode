@@ -3,7 +3,7 @@ Pseudo-code 2
 Location = new Object()
 Location.opening
 Location.closing
-Location.Stars
+Location.Score
 Location.Wait
 Location.MaxShift
 
@@ -41,4 +41,7 @@ for i in range(Locations):
 	arrival = EstimateArrivalFrom(Locations[i],Locations[i+1])
 	Locations[i].Wait = Wait(Locations[i].Opening, arrival)
 	Locations[i].MaxShift = MaxShift(Locations, i, Locations[i].opening, Locations[i].closing, arrival )
+
+
+
 
