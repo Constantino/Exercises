@@ -15,29 +15,30 @@ class insertion_step:
 
 		return max_shift	
 
-	def Shift( j , i):
-		cij = EstimateArrivalFrom( IncludedLocations[i], Locations[j] )
-		wait = Locations[j].Wait
-		Tj = max_shift
-		cjk = EstimateArrivalFrom( Locations[j], IncludedLocations[i+1] )
-		cik = EstimateArrivalFrom( IncludedLocations[i],  IncludedLocations[i+1])
+	def Shift( self, Locations, j , i, times, start):
+		cij = self.estimateArrival( i, j, times, start )
+		wait = Locations[j].wait
+		Tj = Locations[j].max_shift
+		cjk = self.estimateArrival( j, len(Locations)-1 , times, start)
+		cik = self.estimateArrival( i,  len(Locations)-1, times, start)
 
 		Shift = cij + wait + Tj + cjk - cik
-		Sum_Wait_MaxShift = IncludedLocations[i+1].Wait + IncludedLocations[i+1].MaxShift
+		Sum_Wait_MaxShift = Locations[j].wait + Locations[j].max_shift
 
 		return Shift if (Shift <= Sum_Wait_MaxShift) else Sum_Wait_MaxShift
 		
 	def update_locations(self,Locations,times,start,end):
 		len_loc = len(Locations)-1
-		for i in range(len_loc):
+		for i in range(1,len_loc):
 			arrival = self.estimateArrival(Locations[i].id_location,Locations[i+1].id_location,times,start)
 			Locations[i].wait = self.wait(Locations[i].opening, arrival)
 			
 			print "o: ",Locations[i].opening," a: ",arrival," wait: ",Locations[i].wait
 
 			Locations[i].max_shift = self.maxShift(Locations, 0, Locations[i].opening, Locations[i].closing, arrival, times,start,end)
+			
+			Locations[i].shift = self.Shift(Locations, i, i-1, times, start)
 			"""
-			Locations[i].Shift = Shift( i, Locations.LastIndex-1 )
 			Locations[i].Ratio = Ratio( i )
 			"""
 		return Locations
