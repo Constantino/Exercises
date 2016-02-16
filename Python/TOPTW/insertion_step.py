@@ -13,7 +13,10 @@ class insertion_step:
 			return 0
 		max_shift = min( closing-arrival , self.wait(opening, arrival) + self.maxShift(Locations, i+1, Locations[i+1].opening, Locations[i+1].closing, self.estimateArrival(i, i+1,times,start), times,start,end))
 
-		return max_shift	
+		return max_shift
+
+	def ratio(self,Locations,i):
+		return Locations[i].score*1.0/Locations[i].shift	
 
 	def Shift( self, Locations, j , i, times, start):
 		cij = self.estimateArrival( i, j, times, start )
@@ -31,14 +34,13 @@ class insertion_step:
 		len_loc = len(Locations)-1
 		for i in range(1,len_loc):
 			arrival = self.estimateArrival(Locations[i].id_location,Locations[i+1].id_location,times,start)
-			Locations[i].wait = self.wait(Locations[i].opening, arrival)
 			
-			print "o: ",Locations[i].opening," a: ",arrival," wait: ",Locations[i].wait
+			Locations[i].wait = self.wait(Locations[i].opening, arrival)
 
 			Locations[i].max_shift = self.maxShift(Locations, 0, Locations[i].opening, Locations[i].closing, arrival, times,start,end)
 			
 			Locations[i].shift = self.Shift(Locations, i, i-1, times, start)
-			"""
-			Locations[i].Ratio = Ratio( i )
-			"""
+		
+			Locations[i].ratio = self.ratio( Locations, i )
+			
 		return Locations
