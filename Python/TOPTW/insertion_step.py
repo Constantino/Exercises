@@ -33,8 +33,8 @@ class insertion_step:
 		return Shift if (Shift <= Sum_Wait_MaxShift) else Sum_Wait_MaxShift
 		
 	def update_locations(self,Locations,times,start,end):
-		len_loc = len(Locations)-1
-		for i in range(1,len_loc):
+		
+		for i in range(1,len(Locations)-1):
 			arrival = self.estimateArrival(Locations[i].id_location,Locations[i+1].id_location,times,start)
 
 			Locations[i].wait = self.wait(Locations[i].opening, arrival)
