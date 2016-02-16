@@ -1,14 +1,21 @@
 class insertion_step:
 
 	def wait(self, opening,arrival):
+		#Wait: in case of arriving before the location opens, 
+		#if we arrive later then we wait 0 minutes
 		return max(0, opening-arrival)
 
 	def estimateArrival(self,l_i, l_k, times,start):
+		#estimate time from location_i to location_k + start time
 		return times[l_i][l_k]+start
 	
 	def maxShift(self, Locations, i, opening, closing, arrival, times,start,end):
 		if i == (len(Locations)-1):
+			#If we reach the last location, means it's the end of the tour
 			return 0
+
+		#We chose the maximum time allowed to stay in one place in order to not make 
+		#infeasible the staying time for the rest of locations.
 		return 	min( closing-arrival , 
 						self.wait(opening, arrival) + 
 							self.maxShift(
@@ -18,9 +25,11 @@ class insertion_step:
 
 
 	def ratio(self,Locations,i):
+		#Gain of choosing it taking score vs cost of time
 		return Locations[i].score*1.0/Locations[i].shift	
 
 	def Shift( self, Locations, j , i, times, start):
+		#Get the total cost of time of including a location between location_i and location_k
 		cij = self.estimateArrival( i, j, times, start )
 		wait = Locations[j].wait
 		Tj = Locations[j].max_shift
@@ -33,7 +42,8 @@ class insertion_step:
 		return Shift if (Shift <= Sum_Wait_MaxShift) else Sum_Wait_MaxShift
 		
 	def update_locations(self,Locations,times,start,end):
-		
+		#Since location 0 is the origin and the last one the end of the tour:
+		#Iterate from the second location until the penultimate location
 		for i in range(1,len(Locations)-1):
 			arrival = self.estimateArrival(Locations[i].id_location,Locations[i+1].id_location,times,start)
 
