@@ -4,7 +4,7 @@ from insertion_step import insertion_step
 def print_locations(Locations):
 	print "Locations:"
 	for e in Locations:
-		print "-- id location: ",e.id_location
+		print "-- location ID: ",e.id_location
 		print "-- name: ",e.name
 		print "-- score: ",e.score
 		print "-- wait: ",e.wait
