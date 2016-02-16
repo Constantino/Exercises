@@ -8,8 +8,9 @@ def print_locations(Locations):
 		print "-- wait: ",e.wait
 		
 		print "-- max_shift: ",e.max_shift
+		
+		print "-- shift: ",e.shift
 		"""
-		print e.shift
 		print e.radio
 		"""
 
@@ -23,11 +24,12 @@ for e in range(5):
 
 #Instance of 4 elements
 Locations[0].id_location = 0
-Locations[0].name = "Loc1"
-Locations[0].opening = 8
-Locations[0].closing = 19
-Locations[0].score = 4
+Locations[0].name = "start"
+Locations[0].opening = 9
+Locations[0].closing = 9
+Locations[0].score = 0
 Locations[0].max_shift = 0
+Locations[0].shift = 0
 
 Locations[1].id_location = 1		
 Locations[1].name = "Loc2"
@@ -35,6 +37,7 @@ Locations[1].opening = 9
 Locations[1].closing = 20
 Locations[1].score = 5
 Locations[1].max_shift = 0
+Locations[1].shift = 0
 
 Locations[2].id_location = 2
 Locations[2].name = "Loc3"
@@ -42,6 +45,7 @@ Locations[2].opening = 12
 Locations[2].closing = 23
 Locations[2].score = 3
 Locations[2].max_shift = 0
+Locations[2].shift = 0
 
 Locations[3].id_location = 3
 Locations[3].name = "Loc4"
@@ -50,6 +54,7 @@ Locations[3].closing = 19
 Locations[3].score = 4
 Locations[3].wait = 0
 Locations[3].max_shift = 0
+Locations[3].shift = 0
 
 Locations[4].id_location = 4
 Locations[4].name = "End"
@@ -58,6 +63,7 @@ Locations[4].closing = end
 Locations[4].score = 0
 Locations[4].wait = 0
 Locations[4].max_shift = 0
+Locations[4].shift = 0
 
 times = [
 [0,   0.5, 1.3, 0.3, 1],
