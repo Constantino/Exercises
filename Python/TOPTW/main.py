@@ -25,8 +25,8 @@ for e in range(5):
 #Instance of 4 elements
 Locations[0].id_location = 0
 Locations[0].name = "start"
-Locations[0].opening = 9
-Locations[0].closing = 9
+Locations[0].opening = start
+Locations[0].closing = start
 Locations[0].score = 0
 Locations[0].max_shift = 0
 Locations[0].shift = 0
