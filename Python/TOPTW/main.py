@@ -18,7 +18,7 @@ end = 20 #hours
 
 Locations = []
 
-for e in range(4):
+for e in range(5):
 	Locations.append(location())
 
 #Instance of 4 elements
@@ -51,12 +51,19 @@ Locations[3].score = 4
 Locations[3].wait = 0
 Locations[3].max_shift = 0
 
+Locations[4].id_location = 4
+Locations[4].name = "End"
+Locations[4].opening = end
+Locations[4].closing = end
+Locations[4].score = 4
+Locations[4].wait = 0
+Locations[4].max_shift = 0
 
-times = [[0,0.5,1.3,0.3],[0.5,0,0.7,2],[1.3,0.7,0,1],[0.3,2,1,0]]
+times = [[0,0.5,1.3,0.3,1],[0.5,0,0.7,2,1],[1.3,0.7,0,1,1],[0.3,2,1,0,1],[1,1,1,1,0]]
 
 InsertionStep = insertion_step()
 
-Locations = InsertionStep.update_locations(Locations,times)
+Locations = InsertionStep.update_locations(Locations,times,start,end)
 
 print_locations(Locations)
 
