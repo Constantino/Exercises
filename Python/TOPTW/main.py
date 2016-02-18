@@ -84,4 +84,6 @@ Locations = InsertionStep.update_locations(Locations,times,start,end)
 
 print_locations(Locations)
 
+InsertionStep.select_to_insert(Locations)
+
 

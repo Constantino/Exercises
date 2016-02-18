@@ -1,3 +1,5 @@
+import random
+
 class insertion_step:
 
 	def wait(self, opening,arrival):
@@ -56,3 +58,23 @@ class insertion_step:
 			Locations[i].ratio = self.ratio( Locations, i )
 			
 		return Locations
+
+	def select_to_insert(self,Locations):
+		percentage = 30 #percent
+		ratios = [e.ratio for e in Locations]
+		#Get radio value to select potential locations to choose
+		selection_point = sum(ratios)*percentage/100
+		potential_locations = [e.id_location for e in Locations if e.ratio >= selection_point]
+		
+		len_pot = len(potential_locations)
+		index = random.randrange(len_pot)
+		location_selected = potential_locations[index]
+		"""
+		print "random_number: ",index
+		print "ratios: ",ratios
+		print "select_point: ",selection_point
+		print "potencial_locations: ",potential_locations
+		"""
+		print "location_selected: ",location_selected
+
+		return location_selected
