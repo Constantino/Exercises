@@ -47,11 +47,11 @@ class insertion_step:
 		#Since location 0 is the origin and the last one the end of the tour:
 		#Iterate from the second location until the penultimate location
 		for i in range(1,len(Locations)-1):
-			arrival = self.estimateArrival(Locations[i].id_location,Locations[i+1].id_location,times,start)
+			Locations[i].arrival = self.estimateArrival(Locations[i].id_location,Locations[i+1].id_location,times,start)
 
-			Locations[i].wait = self.wait(Locations[i].opening, arrival)
+			Locations[i].wait = self.wait(Locations[i].opening, Locations[i].arrival)
 
-			Locations[i].max_shift = self.maxShift(Locations, 0, Locations[i].opening, Locations[i].closing, arrival, times,start,end)
+			Locations[i].max_shift = self.maxShift(Locations, 0, Locations[i].opening, Locations[i].closing, Locations[i].arrival, times,start,end)
 			
 			Locations[i].shift = self.Shift(Locations, i, i-1, times, start)
 		
@@ -78,3 +78,17 @@ class insertion_step:
 		print "location_selected: ",location_selected
 
 		return location_selected
+
+	def update_after_insertion(self,j,Locations,times,start,end):
+		k = j+1
+		Locations[j].shift = self.Shift(Locations, j, j-1, times, start)
+		Locations[k].wait = max( 0, Locations[k].wait - Locations[j].shift )
+		Locations[k].arrival = Locations[k].arrival + Locations[j].shift
+		Locations[k].shift = max(0,Locations[j].shift - Locations[k].wait)
+		Locations[k].start = Locations[k].start + Locations[k].shift
+		Locations[k].max_shift = Locations[k].max_shift - Locations[k].shift
+
+		return
+
+	def update_before_insertion():
+		return
