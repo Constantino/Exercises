@@ -85,10 +85,10 @@ class insertion_step:
 		Locations[k].wait = max( 0, Locations[k].wait - Locations[j].shift )
 		Locations[k].arrival = Locations[k].arrival + Locations[j].shift
 		Locations[k].shift = max(0,Locations[j].shift - Locations[k].wait)
-		Locations[k].start = Locations[k].start + Locations[k].shift
-		Locations[k].max_shift = Locations[k].max_shift - Locations[k].shift
+		#Locations[k].start = Locations[k].start + Locations[k].shift
+		Locations[k].max_shift = max(0,Locations[k].max_shift - Locations[k].shift)
 
-		return
+		return Locations
 
 	def update_before_insertion():
 		return
