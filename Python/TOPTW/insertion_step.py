@@ -64,10 +64,10 @@ class insertion_step:
 		ratios = [e.ratio for e in Locations]
 		#Get radio value to select potential locations to choose
 		selection_point = sum(ratios)*percentage/100
-		potential_locations = [e.id_location for e in Locations if e.ratio >= selection_point]
+		potential_locations = [e for e in Locations if e.ratio >= selection_point]
 		
 		len_pot = len(potential_locations)
-		index = random.randrange(len_pot)
+		index = random.randrange(0,len_pot)
 		location_selected = potential_locations[index]
 		"""
 		print "random_number: ",index
@@ -75,8 +75,8 @@ class insertion_step:
 		print "select_point: ",selection_point
 		print "potencial_locations: ",potential_locations
 		"""
-		print "location_selected: ",location_selected
-
+		#print "location_selected: ",location_selected
+		#print "l sel: ",Locations[location_selected].id_location
 		return location_selected
 
 	def update_after_insertion(self,j,Locations,times,start,end):
@@ -85,10 +85,8 @@ class insertion_step:
 		Locations[k].wait = max( 0, Locations[k].wait - Locations[j].shift )
 		Locations[k].arrival = Locations[k].arrival + Locations[j].shift
 		Locations[k].shift = max(0,Locations[j].shift - Locations[k].wait)
+		print "k: ",k," shift: ",Locations[k].shift
 		#Locations[k].start = Locations[k].start + Locations[k].shift
 		Locations[k].max_shift = max(0,Locations[k].max_shift - Locations[k].shift)
 
 		return Locations
-
-	def update_before_insertion():
-		return
