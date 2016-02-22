@@ -64,7 +64,7 @@ class insertion_step:
 		#Iterate from the second location until the penultimate location
 		for i in range(1,len(Locations)-1):
 			#print "i: ",i
-			Locations[i].arrival = self.estimateArrival(Locations[i-1].id_location,Locations[i].id_location,times,start)
+			Locations[i].arrival = self.estimateArrival(0,Locations[i].id_location,times,start)
 			#print "Location arrival: ", Locations[i].arrival
 			Locations[i].wait = self.wait(Locations[i].opening, Locations[i].arrival)
 
