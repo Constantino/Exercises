@@ -31,6 +31,7 @@ Locations[0].score = 0
 Locations[0].max_shift = 0
 Locations[0].shift = 0
 Locations[0].ratio = 0
+Locations[0].arrival = 0
 
 Locations[1].id_location = 1		
 Locations[1].name = "Loc2"
@@ -40,6 +41,7 @@ Locations[1].score = 5
 Locations[1].max_shift = 0
 Locations[1].shift = 0
 Locations[1].ratio = 0
+Locations[1].arrival = 0
 
 Locations[2].id_location = 2
 Locations[2].name = "Loc3"
@@ -49,6 +51,7 @@ Locations[2].score = 3
 Locations[2].max_shift = 0
 Locations[2].shift = 0
 Locations[2].ratio = 0
+Locations[2].arrival = 0
 
 Locations[3].id_location = 3
 Locations[3].name = "Loc4"
@@ -59,6 +62,7 @@ Locations[3].wait = 0
 Locations[3].max_shift = 0
 Locations[3].shift = 0
 Locations[3].ratio = 0
+Locations[3].arrival = 0
 
 Locations[4].id_location = 4
 Locations[4].name = "End"
@@ -69,6 +73,7 @@ Locations[4].wait = 0
 Locations[4].max_shift = 0
 Locations[4].shift = 0
 Locations[4].ratio = 0
+Locations[4].arrival = 0
 
 times = [
 [0,   0.5, 1.3, 0.3, 1],
@@ -82,8 +87,39 @@ InsertionStep = insertion_step()
 
 Locations = InsertionStep.update_locations(Locations,times,start,end)
 
-print_locations(Locations)
+#print_locations(Locations)
 
-InsertionStep.select_to_insert(Locations)
+selected_locations = []
 
+#Add start location to the tour
+selected_locations.append(Locations[0])
+
+while len(Locations)-1 > 2: #number of index > 2; where "2" represents start and end location never removed
+
+	#Select location for the tour
+	selected = InsertionStep.select_to_insert(Locations)
+	print "selected: ",selected
+	
+	#Add the new location to the tour
+	selected_locations.append(selected)
+	print "selected_locations.append( ",selected.id_location
+	#Remove it from the common locations list
+	print "removed l_location: ",selected.id_location
+	Locations.remove(selected)
+
+
+#Add end location to the tour
+print "append: ",Locations[len(Locations)-1].id_location
+selected_locations.append(Locations[len(Locations)-1])
+
+#Update Tour Locations after location_j
+for x in range(selected_locations.index(selected_locations[1]),len(selected_locations)-1):
+	selected_locations = InsertionStep.update_after_insertion(x,selected_locations,times,start,end)
+		
+#Update Tour Locations before location_j
+for x in range(0,selected_locations.index(selected_locations[1])-1):
+	selected_locations[x].max_shift = maxShift(selected_locations, 0, selected_locations[x].opening, Locations[x].closing, Locations[x].arrival, times,start,end)
+
+
+print_locations(selected_locations)
 
