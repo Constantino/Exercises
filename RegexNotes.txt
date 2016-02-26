@@ -1,0 +1,2 @@
+\(+[0-9]{1,5}\,     -- find strings like: (1,
+					-- I used this to replace SQL queries 
