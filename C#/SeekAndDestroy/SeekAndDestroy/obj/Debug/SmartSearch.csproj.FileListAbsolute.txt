@@ -1,0 +1,6 @@
+c:\users\constantino\documents\visual studio 2015\Projects\SmartSearch\SmartSearch\bin\Debug\SmartSearch.exe.config
+c:\users\constantino\documents\visual studio 2015\Projects\SmartSearch\SmartSearch\bin\Debug\SmartSearch.exe
+c:\users\constantino\documents\visual studio 2015\Projects\SmartSearch\SmartSearch\bin\Debug\SmartSearch.pdb
+c:\users\constantino\documents\visual studio 2015\Projects\SmartSearch\SmartSearch\obj\Debug\SmartSearch.csprojResolveAssemblyReference.cache
+c:\users\constantino\documents\visual studio 2015\Projects\SmartSearch\SmartSearch\obj\Debug\SmartSearch.exe
+c:\users\constantino\documents\visual studio 2015\Projects\SmartSearch\SmartSearch\obj\Debug\SmartSearch.pdb

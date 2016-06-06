@@ -1,0 +1,3 @@
+C:\repositories\Exercises\C#\SeekAndDestroy\SeekAndDestroy\bin\Debug\SmartSearch.exe.config
+C:\repositories\Exercises\C#\SeekAndDestroy\SeekAndDestroy\obj\Debug\SmartSearch.exe
+C:\repositories\Exercises\C#\SeekAndDestroy\SeekAndDestroy\obj\Debug\SmartSearch.pdb
