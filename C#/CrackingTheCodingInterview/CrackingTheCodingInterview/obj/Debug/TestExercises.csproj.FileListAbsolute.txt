@@ -1,0 +1,7 @@
+c:\users\constantino\documents\visual studio 2015\Projects\TestExercises\TestExercises\bin\Debug\TestExercises.exe.config
+c:\users\constantino\documents\visual studio 2015\Projects\TestExercises\TestExercises\bin\Debug\TestExercises.exe
+c:\users\constantino\documents\visual studio 2015\Projects\TestExercises\TestExercises\bin\Debug\TestExercises.pdb
+c:\users\constantino\documents\visual studio 2015\Projects\TestExercises\TestExercises\obj\Debug\TestExercises.csprojResolveAssemblyReference.cache
+c:\users\constantino\documents\visual studio 2015\Projects\TestExercises\TestExercises\obj\Debug\TestExercises.exe
+c:\users\constantino\documents\visual studio 2015\Projects\TestExercises\TestExercises\obj\Debug\TestExercises.pdb
+C:\Users\Constantino\Documents\Visual Studio 2015\Projects\TestExercises\TestExercises\bin\Debug\CrackingTheCodingInterview.exe.config
