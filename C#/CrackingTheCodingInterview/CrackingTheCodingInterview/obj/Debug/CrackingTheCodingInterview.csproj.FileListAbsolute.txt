@@ -6,3 +6,6 @@ C:\Users\Constantino\Documents\Visual Studio 2015\Projects\TestExercises\TestExe
 C:\repositories\Exercises\C#\CrackingTheCodingInterview\CrackingTheCodingInterview\bin\Debug\CrackingTheCodingInterview.exe.config
 C:\repositories\Exercises\C#\CrackingTheCodingInterview\CrackingTheCodingInterview\obj\Debug\CrackingTheCodingInterview.exe
 C:\repositories\Exercises\C#\CrackingTheCodingInterview\CrackingTheCodingInterview\obj\Debug\CrackingTheCodingInterview.pdb
+C:\repositories\Exercises\C#\CrackingTheCodingInterview\CrackingTheCodingInterview\bin\Debug\CrackingTheCodingInterview.exe
+C:\repositories\Exercises\C#\CrackingTheCodingInterview\CrackingTheCodingInterview\bin\Debug\CrackingTheCodingInterview.pdb
+C:\repositories\Exercises\C#\CrackingTheCodingInterview\CrackingTheCodingInterview\obj\Debug\CrackingTheCodingInterview.csprojResolveAssemblyReference.cache

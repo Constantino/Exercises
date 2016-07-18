@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestExercises
+namespace CrackingTheCodingInterview
 {
-    class Program
+    class Chapter1
     {
         static void MultipleDeclarationFor() {
             for (int i = 0, j = 0; i < 5; i++, j = j + 2)
@@ -179,7 +179,7 @@ namespace TestExercises
             //TestHasUnique();
             //TestHasUnique2();
             //TestIsPermutation();
-            //TestURLify();
+            TestURLify();
         }
     }
 }
