@@ -1,0 +1,71 @@
+nav{
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	
+}
+
+#content{
+
+	position: absolute;
+	top: 50px;
+	left: 110px;
+	right: 90px;
+	
+	
+}
+
+#profile{
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	
+}
+
+/*Select all p inside a div*/
+div p {
+	background-color: cyan;
+}
+
+/*Select all p which parent is div*/
+div>p {
+
+	background-color: red;
+}
+
+/*Select all p which is next sibling of div*/
+div + p {
+	background-color: green;
+}
+
+/*Select all p that are preceded by a div*/
+div ~ p { 
+
+	background-color: yellow;
+}
+
+[name] {
+
+	background-color: orange;
+}
+
+[name="row1"]{
+
+	background-color: green;
+}
+
+/*Select all with name containing row, when it's space-separated values*/
+[name~="row"]{
+	background-color: gray;
+}
+
+/*Select starting with r*/
+[name^="r"]{
+	background-color: purple;
+}
+
+/*select all starting with x, when it's ad hyphen separated values list*/
+[name |= "x"]{
+	background-color: black;
+}
+

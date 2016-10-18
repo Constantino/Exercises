@@ -2,28 +2,9 @@
 <html>
 <head>
 	<title>Experimentations</title>
-	<style type="text/css">
-		nav{
-			position: absolute;
-			top: 50px;
-			left: 0px;
-			
-		}
-		article{
-
-			position: absolute;
-			top: 50px;
-			left: 110px;
-			right: 90px;
-			
-		}
-		#profile{
-			position: absolute;
-			top: 50px;
-			right: 0px;
-			
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="css/s1.css" />
+	<script type="text/javascript" src="js/e1.js"></script>
+	
 <body>
 
 	<header>A thoughtful Experiment</header>
@@ -37,15 +18,41 @@
 		</ul>
 	</nav>
 
-	<article id="anArticle">
-		<h1>An Article regarding thought is presented here.</h1>
-		<section>
-			<h1>Thought as a provoking element.</h1>
-			<aside id="moreInfo">
-				Here are some reference material.
-			</aside>
-		</section>
-	</article>
+	<div id="content">
+	
+		<article id="anArticle">
+			<h1>An Article regarding thought is presented here.</h1>
+			<section>
+				<h1>Thought as a provoking element.</h1>
+				<aside id="moreInfo">
+					Here are some reference material.
+				</aside>
+			</section>
+
+			<div>
+				<p>Div is parent</p>
+				<p>Div is parent</p>
+				<table border="1">
+					<tr name="row1">
+						<td>
+							<p>Just inside of a div</p>
+						</td>
+					</tr>
+					<tr name= "row 2">
+						<td>
+							<div name="x-y-z">
+								<p>Div is parent</p>	
+								<p>Div is parent 2</p>
+							</div>
+							<p name="xyz">next sibling of 2nd div</p>
+							<p name="x-b-c-d">next sibling of 2nd div but just inside of another div</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+		</article>
+	</div>
 
 	<div id="profile">Profile ....</div>
 	<footer>
