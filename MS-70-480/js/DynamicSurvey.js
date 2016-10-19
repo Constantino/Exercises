@@ -9,7 +9,7 @@ function toggleEverything(){
 	questions.forEach(
 		function (item){
 			if (item !== questions[0]) {
-				item.style.visibility = "collapse";	
+				item.style.display = "none";	
 			}
 
 		}
@@ -73,7 +73,7 @@ function nextQuestion(question,value){
 	var next = getNumber(question,value);
 	
 	if (next !== null) {
-		document.querySelector("[id="+next+"]").style.visibility = "visible";	
+		document.querySelector("[id="+next+"]").style.display = "block";	
 	}
 
 }
