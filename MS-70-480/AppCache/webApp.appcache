@@ -1,0 +1,11 @@
+CACHE MANIFEST
+#My Web Application Cache Manifest
+#v1.0.0.25
+#
+#Cache Section. All cached items
+
+CACHE:
+LocalAndSessionStorage.html
+AppCacheExample.html
+js/localAndSessionStorage.js
+js/status.js
